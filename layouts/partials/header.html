@@ -2,3 +2,21 @@
   <h2>{{ .Site.Title }}</h2>
 </a>
 <nav>{{- partial "nav.html" . -}}</nav>
+<p>
+	🗞️ Subscribe to this blog via
+	{{ with .Site.GetPage "/" }}
+	{{ with .OutputFormats.Get "rss" -}}
+	{{ printf ` <a href="%s">RSS</a>` .Permalink | safeHTML }},
+	{{ end -}}
+	{{ end }}
+	{{ with .Site.GetPage "/" }}
+	{{ with .OutputFormats.Get "json" -}}
+	{{ printf ` <a href="%s">JSON</a>` .Permalink | safeHTML }},
+	{{ end -}}
+	{{ end }}
+	or email below!
+</p>
+<form method="POST" action="https://micro.blog/users/subscribe/107909">
+  <input type="text" name="email" size="30" placeholder="example@example.com" />
+  <input type="submit" value="Subscribe" />
+</form>
