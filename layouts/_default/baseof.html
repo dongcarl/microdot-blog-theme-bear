@@ -8,11 +8,7 @@
   {{- partial "favicon.html" . -}}
   <title>
     {{- block "title" . -}}
-      {{- if eq .Title .Site.Title -}}
-	{{ .Site.Title }}xxx
-      {{- else -}}
-	{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}yyy
-      {{- end -}}
+      {{ with .Title }}{{ if ne . $.Site.Title }}{{ . }} | {{ end }}{{ end }}{{ .Site.Title }}
     {{- end -}}
   </title>
 
