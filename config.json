@@ -1,6 +1,9 @@
 {
   "params": {
     "hideMadeWithLine": true,
-    "favicon": "https://dongcarl.micro.blog/uploads/2023/e141c05ec4.png"
+    "favicon": "https://dongcarl.micro.blog/uploads/2023/e141c05ec4.png",
+    "images": [
+       "https://blog.carldong.me/uploads/2023/34eb6bed3a.png"
+    ]
   }
 }
